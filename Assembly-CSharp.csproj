@@ -64,19 +64,21 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Scripts\DeadZone.cs" />
-    <Compile Include="Assets\Scripts\GameEvents.cs" />
+    <Compile Include="Assets\Scripts\Events\DeadZone.cs" />
+    <Compile Include="Assets\Scripts\Events\GameEvents.cs" />
+    <Compile Include="Assets\Scripts\Events\LoseScreen.cs" />
+    <Compile Include="Assets\Scripts\Events\RestartLevel.cs" />
+    <Compile Include="Assets\Scripts\Events\ScoreChanger.cs" />
+    <Compile Include="Assets\Scripts\Events\ScoreCounter.cs" />
+    <Compile Include="Assets\Scripts\Events\StartGame.cs" />
+    <Compile Include="Assets\Scripts\Events\TracPartDetection.cs" />
     <Compile Include="Assets\Scripts\GameSettings.cs" />
-    <Compile Include="Assets\Scripts\LoseScreen.cs" />
+    <Compile Include="Assets\Scripts\Gameplay\ReversingGravity.cs" />
+    <Compile Include="Assets\Scripts\Gameplay\TrackMove.cs" />
+    <Compile Include="Assets\Scripts\Gameplay\TrackSpwan.cs" />
+    <Compile Include="Assets\Scripts\Infrastructures\BootstrapInstaller.cs" />
+    <Compile Include="Assets\Scripts\Infrastructures\EventsInstaller.cs" />
     <Compile Include="Assets\Scripts\PlayerTag.cs" />
-    <Compile Include="Assets\Scripts\RestartLevel.cs" />
-    <Compile Include="Assets\Scripts\ReversingGravity.cs" />
-    <Compile Include="Assets\Scripts\ScoreChanger.cs" />
-    <Compile Include="Assets\Scripts\ScoreCounter.cs" />
-    <Compile Include="Assets\Scripts\StartGame.cs" />
-    <Compile Include="Assets\Scripts\TracPartDetection.cs" />
-    <Compile Include="Assets\Scripts\TrackMove.cs" />
-    <Compile Include="Assets\Scripts\TrackSpwan.cs" />
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap.shader" />
@@ -280,6 +282,21 @@
     </Reference>
     <Reference Include="UnityEditor">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.4.18f1/Editor/Data/Managed/UnityEditor.dll</HintPath>
+    </Reference>
+    <Reference Include="Zenject.ReflectionBaking.Mono.Cecil">
+      <HintPath>C:/PROTOTYPES/Reverse Gravity/Assets/Plugins/Zenject/OptionalExtras/ReflectionBaking/Lib/Zenject.ReflectionBaking.Mono.Cecil.dll</HintPath>
+    </Reference>
+    <Reference Include="Zenject.ReflectionBaking.Mono.Cecil.Mdb">
+      <HintPath>C:/PROTOTYPES/Reverse Gravity/Assets/Plugins/Zenject/OptionalExtras/ReflectionBaking/Lib/Zenject.ReflectionBaking.Mono.Cecil.Mdb.dll</HintPath>
+    </Reference>
+    <Reference Include="Zenject.ReflectionBaking.Mono.Cecil.Pdb">
+      <HintPath>C:/PROTOTYPES/Reverse Gravity/Assets/Plugins/Zenject/OptionalExtras/ReflectionBaking/Lib/Zenject.ReflectionBaking.Mono.Cecil.Pdb.dll</HintPath>
+    </Reference>
+    <Reference Include="Zenject.ReflectionBaking.Mono.Cecil.Rocks">
+      <HintPath>C:/PROTOTYPES/Reverse Gravity/Assets/Plugins/Zenject/OptionalExtras/ReflectionBaking/Lib/Zenject.ReflectionBaking.Mono.Cecil.Rocks.dll</HintPath>
+    </Reference>
+    <Reference Include="Zenject-usage">
+      <HintPath>C:/PROTOTYPES/Reverse Gravity/Assets/Plugins/Zenject/Source/Usage/Zenject-usage.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.iOS.Extensions.Xcode">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.4.18f1/Editor/Data/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.Xcode.dll</HintPath>
@@ -660,7 +677,24 @@
       <HintPath>C:/PROTOTYPES/Reverse Gravity/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
     </Reference>
   </ItemGroup>
-  <ItemGroup></ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="Zenject-Editor.csproj">
+      <Project>{31EE26C5-D927-8900-F4C3-6B8CC314BCF8}</Project>
+      <Name>Zenject-Editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="Zenject-ReflectionBaking-Editor.csproj">
+      <Project>{CE233737-267A-33E4-F0D1-DAB3AB5C0BD2}</Project>
+      <Name>Zenject-ReflectionBaking-Editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="Zenject-PoolMonitor-Editor.csproj">
+      <Project>{622BD8D9-6FA4-3A80-834B-AC472414F805}</Project>
+      <Name>Zenject-PoolMonitor-Editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="Zenject.csproj">
+      <Project>{FB2981A8-3497-8CB5-0C60-B22243A53DFD}</Project>
+      <Name>Zenject</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

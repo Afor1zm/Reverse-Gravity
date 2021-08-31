@@ -1,15 +1,18 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Zenject;
 
 public class GameSettings : MonoBehaviour
 {
     private GameEvents gameEvents;
     [SerializeField] private GameObject pauseCanvas;
-    private void Awake()
-    {        
-        gameEvents = GetComponentInParent<GameEvents>();       
-    }
+
+    [Inject]
+    private void Construct(GameEvents gameevents)
+    {
+        gameEvents = gameevents;
+    }   
     public void PauseGame()
     {
         if (Time.timeScale != 0)

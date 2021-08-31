@@ -513,7 +513,8 @@ GameObject:
   - component: {fileID: 6448431228075249724}
   - component: {fileID: 1705106964709417864}
   - component: {fileID: 572700154234556308}
-  - component: {fileID: 4115314907359633586}
+  - component: {fileID: 1867981608}
+  - component: {fileID: 8104421777777223731}
   m_Layer: 0
   m_Name: Trackpart
   m_TagString: Untagged
@@ -568,7 +569,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 5, y: 4, z: 1}
   m_Center: {x: 2, y: 0.5, z: 0}
---- !u!54 &4115314907359633586
+--- !u!54 &1867981608
 Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -584,6 +585,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &8104421777777223731
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8860008433844772277}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 717a02054ef2699498e6bd4234fd7995, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _containerSource: 0
 --- !u!1 &9156827112395539581
 GameObject:
   m_ObjectHideFlags: 0
